@@ -5,8 +5,7 @@
  * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
  * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:400,700);
 section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
   color: #fff; }
 
@@ -14,11 +13,11 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #fff;
-  background-color: #fff; }
+  background: #2484BF;
+  background-color: #2484BF; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
+  font-family: "Comfortaa", sans-serif;
   font-size: 40px;
   font-weight: normal;
   color: #000; }
@@ -49,8 +48,8 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #000;
-  font-family: "News Cycle", Impact, sans-serif;
-  font-weight: normal;
+  font-family: "Inconsolata", Impact, sans-serif;
+  font-weight: bold;
   line-height: 1.2;
   letter-spacing: normal;
   text-transform: none;
@@ -213,7 +212,7 @@ body {
  *********************************************/
 .reveal a {
   color: #00008B;
-  text-decoration: none;
+  text-decoration: underline;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
@@ -247,21 +246,21 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #00008B;
+  border-color: #2DA683;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #00008B; }
+  color: #2DA683; }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #00008B; }
+  color: #2DA683; }
 
 .reveal .progress span {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);

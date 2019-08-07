@@ -1,49 +1,485 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/simple.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" integrity="sha256-PF6MatZtiJ8/c9O9HQ8uSUXr++R9KBYu4gbNG5511WE=" crossorigin="anonymous" />
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background-image="dump.jpg">
+          <h1
+            style="font-size: 2em; color: white; text-shadow: 0 0 0.1em black, 0 0 1em black, 0 0 2em black;"
+          >
+            So you're considering brownfield
+          </h1>
+          <p style="font-size: 0.3em; color: #aaa; position: absolute; bottom: -100%;">"Zetor industrial brownfield before demolition" by brozkeff is licensed under CC BY-SA 2.0</p>
+          <aside class="notes">
+            So you're considering brownfield... about a year ago, so did I. I'm going to tell you my experience since, and how you can consider brownfield for your use.
+          </aside>
+        </section>
+        <section>
+          <section>
+            <img
+              src="turnrye.png"
+              style="background: none; border: none; box-shadow: none; width: 25%"
+            />
+            <h2>@turnrye</h2>
+            <p>Hi! I'm Ryan.</p>
+            <aside class="notes">
+              My name is Ryan Turner. I'm a newer member of the React Native
+              core.
+            </aside>
+          </section>
+          <section>
+            <img
+              src="azo.png"
+              style="background: none; border: none; box-shadow: none; width: 25%"
+            />
+            <aside class="notes">
+              I work on mobile applications for AutoZone, an international aftermarket automative
+             retailer. We help you fix your car, or we help someone fix
+              your car for you.
+            </aside>
+          </section>
+          <section data-background-image="app-listings-xcf.png">
+            <aside class="notes">
+              Last winter we released our first greenfield React Native application. We faced some classic newcomer issues, but overall it went pretty smoothly. We were impressed with what performance could be both from the application and the developers. We had a bigger application that was native, and the product team had a long backlog for it. I was faced with the question: how?
+            </aside>
+          </section>
+          <section>
+            <h2>Considering Brownfield</h2>
+            <ul>
+              <li>What is it</li>
+              <li>Why we're doing it</li>
+              <li>Is it for your app</li>
+              <li>Take the plunge</li>
+            </ul>
+            <aside class="notes">
+              Today I'll explain what brownfield is, why AutoZone is doing brownfield, talk about how you can determine if it's a fit for you, and finally we'll talk about what it means to take the plunge. I don't plan to show you any code today -- there are a lot of great resources on the brownfield APIsof React Native that I'll share near the end instead.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>So what is it?</h2>
+            <aside class="notes">
+              I'm sure most of you have heard the term brownfield before, but I imagine if I were to ask you to define it, there would be a few different answers.
+            </aside>
+          </section>
+          <section>
+            <p>Lets you add cross platform components in existing apps</p>
+            <aside class="notes">
+              A lot of people see brownfield as a way to add cross platform screens to existing apps. That's what most tutorials and examples show.
+            </aside>
+          </section>
+          <section>
+            <p>
+              Lets you migrate an app to React Native
+            </p>
+            <aside class="notes">
+              Brownfield can also be a way to migrate an existing app from some other platform to React Native. It's a path to transform a codebase into a React Native application.
+            </aside>
+          </section>
+          <section>
+            <p>
+              Is not initialized via the CLI or Expo
+            </p>
+            <aside class="notes">
+              The obvious thing though is that brownfield isn't initialized via the CLI or Expo. It doesn't come from templates.
+            </aside>
+          </section>
+          <section>
+            <h2>So What is it?</h2>
+            <p>
+              React Native on top of an existing app
+            </p>
+            <aside class="notes">
+              At it's heart, brownfield lets you develop React Native on something that wasn't originally React Native. And depending on how far you go, it might be a path to moving a codebase to end up like a greenfield app.
+            </aside>
+          </section>
+          <section>
+            <h2>Considering Brownfield</h2>
+            <ul>
+              <li>
+                ✔️
+                <span style="text-decoration: line-through;"
+                  >What is it</span
+                >
+              </li>
+              <li>Why we're doing it</li>
+              <li>Is it for your app</li>
+              <li>Take the plunge</li>
+            </ul>
+            <aside class="notes">
+              So with definitions aside, let me tell you why we're doing a brownfield transformation of our application.
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Why we're doing it</h2>
+          </section>
+          <section>
+            <p>
+              We have an Android+iOS native app in the appstore that was
+              <strong>hurting</strong>
+            </p>
+            <p>We needed to overhaul it</p>
+            <aside class="notes">
+                So I mentioned earlier that our product folks were ready for a refresh. We had an app with millions of users that was largely written in 2014. Both the objective-c and android codebases had architectural issues, and they were becoming a burden to maintain.
+              </aside>
+          </section>
+          <section>
+            <p>
+              Even with the most aggressive timeline, we needed to add new
+              features and maintain the old app before the new is ready
+            </p>
+            <aside class="notes">
+              Our product owner continued to challenge us to implement new features, but we'd gotten to the point where everyone understood significant infrastructure work needed to be done. But the demand for improvements couldn't completely stop, as our had a business with over 6,000 stores to support. We couldn't delay regulatory or compliance changes to support a greenfield development.
+            </aside>
+          </section>
+          <section>
+            <p>We have just 1 team</p>
+            <aside class="notes">
+              And to complicate things even more, our group was small enough that we couldn't support splitting up into "legacy" and "nextgen" teams. We had to improve the infrastructure, refresh the user experience, and handle urgent business demands all at the same time.
+            </aside>
+          </section>
+          <section>
+            <p>
+              But we had a trick up our sleeve
+            </p>
+            <aside class="notes">
+              We did have one trick though; we'd developed a greenfield react native app in the past.
+            </aside>
+          </section>
+          <section><img src="very-fast.gif" style="background: none; border: none; box-shadow: none;" />
+            <aside class="notes">We found that we could deliver features faster than when we did native development, thanks to our features being relatively consistent between both platforms.</aside>
+          </section>
+          <section>
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjZmZmIi8+CiAgPGcgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"
+              style="border:0; box-shadow: none !important; width: 30%; background: none !important"
+            />
+            <p>
+              Other teams are using React for web frontends already, and we
+              share many common features and APIs
+            </p>
+            <aside class="notes">And we knew many other teams were using React for web development. We knew that if we converged on React, our small team would benefit from the larger organization. We'd be able to work together on some of the tooling and standards of the other teams, and in the long run we could get libraries in place with shared components.</aside>
+          </section>
+          <section data-background-image="dojo.gif"></section>
+          <section>
+            Does this sound familiar to anyone else?
+            <aside class="notes">Has anyone else been in this situation -- trying to evaluate if brownfield is a solution to your needs? Did anone else feel like there was a lot of uncertainty? We committed to it at this point, but I think there are some lessons that we can share in retrospect.</aside>
+          </section>
+          <section>
+            <h2>Considering Brownfield</h2>
+            <ul>
+              <li>
+                ✔️
+                <span style="text-decoration: line-through;"
+                  >What is it</span
+                >
+              </li>
+              <li>
+                ✔️
+                <span style="text-decoration: line-through;"
+                  >Why we're doing it</span
+                >
+              </li>
+              <li>Is it for your app</li>
+              <li>Take the plunge</li>
+            </ul>
+            <aside class="notes">So let's talk about that now: is brownfield for you?</aside>
+          </section>
+        </section>
+        <section>
+          <section><h2>Is it for your app</h2></section>
+          <section>
+            <h2>Filter questions</h2>
+            <ul>
+              <li>Cross platform</li>
+              <li>JavaScript/TypeScript/ReasonML</li>
+              <li>Business alignment</li>
+            </ul>
+            <aside class="notes">First, a couple of filter questions. Is your team setup to develop cross platform? This was important, because you need the team to support native, react native, continuous integration, or even quality engineering technology. You can't approach this with a team identifying themselves as an "Android" or an "iOS" team. Also, are you ready to support the language that you'll be forced to write in? Some organizations have policies dictating what languages may be used. Finally, is your business team aligned with investing effort in this transformation? Remember that this isn't a purely technical decision: adopting a new platform has business implications, like what comes easy and what comes hard. There are tradeoffs in every decision, and you need to confirm that your business team is on board.</aside>
+          </section>
+          <section>
+            <h2>Bonus questions</h2>
+            <ul>
+              <li>Shared components</li>
+              <li>Better designer engagement</li>
+              <li>Shared tooling</li>
+              <aside class="notes">Then, let's talk about the benefits of React Native. Do you have products that would benefit from component-based UI architecture? Can you imagine sharing experiences across multiple platforms? What about your designers -- have you considered how many of their popular tools have good integrations with the React ecosystem? Perhaps even there's an opportunity to share tooling across your teams by adopting a JavaScript-powered platform. All of these are things that might push you from "maybe I'll do brownfield" to "I need to do brownfield".</aside>
+            </ul>
+          </section>
+          <section>
+            <h2>UI-Data Continuum</h2>
+            <table>
+              <tr>
+                <td></td>
+                <td>Components</td>
+                <td>Modals</td>
+                <td>Flows</td>
+              </tr>
+              <tr>
+                <td>No data share</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+              </tr>
+              <tr>
+                <td>Native <i class="fas fa-long-arrow-alt-right"></i> RN</td>
+                <td>❓</td>
+                <td>✔</td>
+                <td>✔</td>
+              </tr>
+              <tr>
+                <td>Native <i class="fas fa-exchange-alt"></i> RN</td>
+                <td>❌</td>
+                <td>❓</td>
+                <td>✔️️</td>
+              </tr>
+            </table>
+            <aside class="notes">From here, it gets much more complicated. In all brownfield projects, you need to be concerned with two factors: how deep your UI integration needs to be, and how your brownfield work might depend on data. Generally, as you get deeper in both, the work becomes more reasonable. Also, having a simpler data integration is always a win, so regardless of how deep you're doing UI, less data is better.</aside>
+          </section>
+          <section>
+            <h2>Feature migration</h2>
+            <table>
+              <tr>
+                <td></td>
+                <td>Feature problems</td>
+                <td>They're OK</td>
+                <td>Need additional</td>
+              </tr>
+              <tr>
+                <td>Arch. is good</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+              </tr>
+              <tr>
+                <td>Meh arch.</td>
+                <td>❓</td>
+                <td>❓</td>
+                <td>✔️</td>
+              </tr>
+              <tr>
+                <td>Throw it out</td>
+                <td>❌</td>
+                <td>❓</td>
+                <td>❓</td>
+              </tr>
+            </table>
+            <aside class="notes">If you're considering using brownfield as a way to migrate features and shift platforms, you need to be concerned with the big picture for your business requirements and your product's infrastructure. We'll call these features and architecture. As you'd expect, you'll find that things are better off if both of these are in a good state. Legacy feature fit ends up being less important than architecture fit, because quite likely there will be things along the way that your product team will want to revise given the opportunity. But a crummy architecture will stifle your efforts every step along the way. And in all honestly, my product lived somewhere there on the bottom row. Those "bonus points" really pushed us over, and they might in your case too.</aside>
+          </section>
+          <section>
+            <h2>Other considersations</h2>
+            <ul>
+              <li>Simple customer journey 👌
+              </li>
+              <li>Prod support of something new
+              </li>
+            </ul>
+            <aside class="notes">And a few additional factors for brownfield migration cases. Are you able to "bite off" chunks of the application at a time? If it's a big mess, you're better off just doing greenfield. Anticipate platform challenges along the way, regardless of how much help you get. And to limit the impact of that, have a strategy in place for crashes and bugs from the beginning. If you can't negotiate on that, this approach might pose an unacceptable level of risk.</aside>
+          </section>
+          <section>
+            <h2>Considering Brownfield</h2>
+            <ul>
+              <li>
+                ✔️
+                <span style="text-decoration: line-through;"
+                  >What is it</span
+                >
+              </li>
+              <li>
+                ✔️
+                <span style="text-decoration: line-through;"
+                  >Why we're doing it</span
+                >
+              </li>
+              <li>
+                ✔️
+                <span style="text-decoration: line-through;"
+                  >Is it for your app</span
+                >
+              </li>
+              <li>Take the plunge</li>
+            </ul>
+            <aside class="notes">Now we've covered why we're doing brownfield and why you might. Next let me leave you with some advice from our own experiences.</aside>
+          </section>
+        </section>
+        <section>
+          <section><h2>Take the plunge</h2></section>
+          <section>
+            <h2>Build A Plan</h2>
+            <ol>
+              <li>Introduce React Native</li>
+              <li>Share state or service calls xplat</li>
+              <li>Transition screens over</li>
+              <li>Migrate over base nav, e.g. tabs</li>
+            </ol>
+            <aside class="notes">If you're going to do a brownfield migration, build a plan. This isnt different from any other engineering problem, so this should come naturally.</aside>
+          </section>
+          <section>
+            <h2>Start small</h2>
+            <ul>
+              <li>Begin with the simplest feature</li>
+              <li>Focus on getting the tooling right</li>
+            </ul>
+            <aside class="notes">First, focus on delivering a low-risk UI element to production. Get your tooling in place, get the teams comfortable, and socialize the fact that you're doing a transformation. Use this as an opportunity to work through the foundations of your work, but also be sure to consider the cost-of-delay of getting things to "perfect". Find the right balance that lets you get something out without needing to get to perfect from day 1, because you will continue to revisit this point across the entire project.</aside>
+          </section>
+          <section>
+            <h2>Taming the bridge</h2>
+            <ul>
+              <li>
+                Combine native event emitters with JS native module callback
+              </li>
+              <li>
+                Similar approach can be used to clone states
+              </li>
+              <li>
+                Be prepared to handle the platform lifecycle
+              </li>
+            </ul>
+            <aside class="notes">While there are a number of exciting changes coming in this front, today we had to work within the bridge between native and react native. This meant that to share data across, we had to combine native events and javascript native modules. Through this solution, by maintaining the appropriate references on either side, you can use API definitions in either direction, or even tightly couple your application states across both environments. As soon as you pursue this though, remember that you have to handle lifecycle on both ends. This is especially important to remember on the native side, otherwise you will have users fall into odd situations that are difficult to debug.</aside>
+          </section>
+          <section>
+            <h2>Transition screens</h2>
+            <ul>
+              <li>Target the "leaf node" experiences</li>
+              <li>Embed multiple React apps in the legacy nav</li>
+              <li>
+                Remember: if it's hard, you're probably doing something wrong
+              </li>
+              <li>Consider revamping your legacy nav if needed</li>
+            </ul>
+            <aside class="notes">Then, start figuring how you will transition screens from your legacy to the go-forward. We found the best way to do this was to take the information architecture of the app and segment screens into various experiences, then pursue those experiences from the leaves inward. Some cases may justify throwing away all of the legacy work first, but remember to stay within that defined segment so that you can continue to productionize your work along the way. If this seems hard to do, it's likely that something is wrong. Either you aren't as good of a candidate as you thought, or there's preliminary work to do within your legacy platform. We found that our navigation needed to be revamped before a transformation could be done, and you might see something like this too.</aside>
+          </section>
+          <section>
+            <h2>Anticipate Platform Work</h2>
+            <ul>
+              <li>
+                You own the platforms, but you have to absorb RN's changes
+              </li>
+              <li>
+                Platform changes can impact brownfield in unexpected,
+                problematic ways
+              </li>
+            </ul>
+            <aside class="notes">Finally, remember that migrating to react native does not mean you get to ignore the native. Even if you're lucky enough to avoid changes to the legacy platform, you still own it. React Native depends on the native platforms behaving consistent with its definitions, and that was especially noticeable in 0.60. In a brownfield situation, upgrading may require significant changes across your legacy code. But falling behind on your React Native version is even more tumultuous. Anticipate that you will need to devote time every few months to addressing platform problems. This will get easier with time, and good architecture at the beginning can make this less of a factor. But if you have a number of 3rd party dependencies or deprecated code, some of the things that you must to do maintain latest React Native will take time. This is a good thing, and prepare for it.</aside>
+          </section>
+          </section>
+          <section>
+            <h2>Look at other materials</h2>
+            <ul>
+              <li>
+                <a href="https://www.youtube.com/watch?v=qupndH1zW_g">
+                  Adding React Native to existing Apps by Eloy Durán (2018)
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=44YdvFAwQwA"
+                  >Strategies For Using React Native In A Brownfield App by
+                  Harry Tormey (2018)</a
+                >
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=tWitQoPgs8w"
+                  >React Native in the "Brown Field" by Leland Richardson
+                  (2017)</a
+                >
+              </li>
+            </ul>
+            <aside class="notes">So this morning I've successfully run through a presentation without showing any code, but that doesn't mean that you shouldn't review code before starting. There are a number of wonderful existing resources that I suggest you review, thanks to devoted work by airbnb, artsy, Harry Tormey, and others.</aside>
+          </section>
+          <section>
+            <img src="TheresAnAppForThatHeader.jpg" style="border:0; box-shadow: none !important; background: none;" />
+            <aside class="notes">I know the decision making system I presented is complex. And naturally since this is an app conference, let me give you an app to help you with your app.</aside>
+          </section>
+          <section>
+            <p><a href="https://soyoureconsideringbrownfield.dev">SoYoureConsideringBrownfield.Dev</a></p>
+            <aside class="notes">So check out SoYoureConsideringBrownfield on the web.</aside>
+          </section>
+          <section>
+            <img src="internet-quiz.png" />
+            <aside class="notes">I've made a fun internet quiz that will give you advice from my presentation today. It's kind of like this Buzzfeed quiz that answers "What kind of cheese am I?". I am Brie, whatever that means. Hopefully mine will be more helpful -- it will tell you what kind of a brownfield fit you are in the form of your favorite Stranger Things character.</aside>
+          </section>
+          <section>
+            <p>It's not scary, it's just another challenge.</p>
+            <aside class="notes">Use the website to remember that brownfield really isn't scary, it's just another challenge. We've found it to be a great fit for us at AutoZone. But ultimately, it's up to you to decide if brownfield is right for you.</aside>
+          </section>
+          <section>
+            <h2>Considering Brownfield</h2>
+            <ul>
+              <li>
+                ✔️
+                <span style="text-decoration: line-through;"
+                  >What is it</span
+                >
+              </li>
+              <li>
+                ✔️
+                <span style="text-decoration: line-through;"
+                  >Why we're doing it</span
+                >
+              </li>
+              <li>
+                ✔️
+                <span style="text-decoration: line-through;"
+                  >Is it for your app</span
+                >
+              </li>
+              <li>
+                ✔️
+                <span style="text-decoration: line-through;"
+                  >Take the plunge</span
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+      </div>
+    </div>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <script src="js/reveal.js"></script>
 
-		<script src="js/reveal.js"></script>
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          { src: "plugin/highlight/highlight.js", async: true }
+        ],
+        slideNumber: true,
+        transition: "slide"
+      });
+    </script>
+  </body>
 </html>
